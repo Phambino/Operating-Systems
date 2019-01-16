@@ -1,0 +1,13 @@
+Name: 	David Pham	Name:	Ibrahim Abdirizak Abdi
+UtorID:	1002597825	UtorID:	1003509651
+
+--- DISCUSSION ---
+
+Assuming that cars are arriving at the lane continously, it's possible that a thread will never acquire its desired quadrant lock to cross. This is based on fact that all threads have an equal chance of acquiring each quadrant lock which can cause starvation.
+
+By definition, starvation occurs when a waiting thread is denied entry of the CS indefinitely. In the case of our monitor, suppose we have 4 thread, thread A,thread B, thread C, and thread D. Let's also say that thread A is crossing cars in the north, thread B is crossing cars in the west, thread C is crossing cars in the south, and thread D is crossing cars in the east.
+
+If all cars in all lanes need to lock quadrant 3 in order to cross, it is possible for cars from a particular thread be starved because they will never be able to cross the intersection. To be more specific, let's say that thread A gets the lock first, crosses the car, and then unlocks quadrant 3. Once quadrant 3 becomes unlocked, threads A, B, C, and D have a chance of acquiring that lock. Given that every thread has this chance, a case appears where thread B can never acquire the lock, thus starving cars from thread B to cross the intersection. Therefore it is possible what starvation can occur when using this monitor.
+
+--- END ---
+

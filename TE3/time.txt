@@ -1,0 +1,43 @@
+Thread 1 inserted 10000 values
+Thread 0 inserted 10000 values
+Thread 2 inserted 10000 values
+Thread 6 inserted 10000 values
+Thread 7 inserted 10000 values
+Thread 4 inserted 10000 values
+Thread 5 inserted 10000 values
+Thread 3 inserted 10000 values
+Total inserts = 80000
+Final length = 79996
+
+real	0m6.811s
+user	0m25.072s
+sys	0m0.012s
+Thread 7 inserted 10000 values
+Thread 2 inserted 10000 values
+Thread 4 inserted 10000 values
+Thread 6 inserted 10000 values
+Thread 5 inserted 10000 values
+Thread 1 inserted 10000 values
+Thread 0 inserted 10000 values
+Thread 3 inserted 10000 values
+Total inserts = 80000
+Final length = 80000
+
+real	0m24.036s
+user	0m24.848s
+sys	0m0.360s
+Thread 0 inserted 10000 values
+Thread 7 inserted 10000 values
+Thread 4 inserted 10000 values
+Thread 1 inserted 10000 values
+Thread 2 inserted 10000 values
+Thread 5 inserted 10000 values
+Thread 3 inserted 10000 values
+Thread 6 inserted 10000 values
+Total inserts = 80000
+Final length = 80000
+
+real	0m14.833s
+user	0m45.964s
+sys	0m0.260s
+
