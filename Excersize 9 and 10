@@ -1,0 +1,65 @@
+convert to binary
+44da -> 0 10001 00110 11010            7f -> fault
+offset -> 0x11
+frame -> 92
+value -> 0x7f -> 011
+
+0 entry is fault
+page fault -> 
+
+69c6 -> 0 11010 01110 00110		
+	do	to	po
+
+	26 	e->14 	6
+
+dv -> bd -> 1 0111101 valid
+0x3d -> 61 decimal  tf
+tv -> d0 -> 1 1010000 valid
+0x50 -> 80 decimal  pf
+pv -> 0a 
+
+
+multiply phys frame by offset add value
+
+140f -> 0 00101 00000 01111
+	do	to	po
+
+	5	0	f
+
+dv -> 7f -> 01111111 invalid
+
+45eb -> 0 10001 01111 01011
+	do	to	po
+
+	17	f	b
+
+dv -> 7f -> 01111111 invalid
+
+steps to compute excersize 9
+
+get virtual address -> 0x69c9 and convert to binary
+69c9 -> 0110 1001 1100 0110 -> 0 11010 01110 00110
+ignore first value and separate the other to get:
+	directory offset -> 11010 -> 26
+	table offset -> 01110 -> 14
+	physical offset -> 00110 -> 6
+
+directory frame -> 51
+convert directory offset to decimal -> 11010 -> 26
+
+find directory value from directory frame (given) and directory offset
+51, 26 -> bd -> convert to binary 1 011 1101
+if the first value to 0, then invalid, 1 is valid
+
+convert directory value to hex to get table frame
+011 1101 -> 3d
+
+convert table frame to decimal and use that with table offset to get table value ->
+similar to to get physical frame and value.
+physical value is where data is stored. no leading zeros
+to get physical address is physical frame (in decimal) * page size (given 32) + physical offset 
+
+excersize 10
+fifo - first in first out
+opt - check all future accesses and check which gets refereced last and replace
+	the other ones
